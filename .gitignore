@@ -1,0 +1,7 @@
+# Default ignored files
+__pycache__
+.idea
+.pytest_cache
+/shelf/
+.ipynb_checkpoints
+/workspace.xml

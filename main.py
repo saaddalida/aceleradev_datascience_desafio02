@@ -149,7 +149,8 @@ def q7():
 
 
 def q8():
-    # Retorne aqui o resultado da questão 8.
+    mean_norm = ((df['Purchase'] - df['Purchase'].min()) / (df['Purchase'].max() - df['Purchase'].min())).mean()
+    return float(mean_norm)
     pass
 
 
@@ -161,7 +162,8 @@ def q8():
 
 
 def q9():
-    # Retorne aqui o resultado da questão 9.
+    df_std = (df['Purchase'] - df['Purchase'].mean()) / df['Purchase'].std()
+    return int(df_std[(df_std >= -1) & (df_std <= 1)].count())
     pass
 
 
@@ -173,6 +175,7 @@ def q9():
 
 
 def q10():
-    # Retorne aqui o resultado da questão 10.
+    comp = df[df['Product_Category_2'].isnull()].index.isin(df[df['Product_Category_3'].isnull()].index).all()
+    return bool(comp)
     pass
 

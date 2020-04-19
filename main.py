@@ -113,7 +113,7 @@ def q4():
 
 
 def q5():
-    # Retorne aqui o resultado da questão 5.
+    return df[df.isna().any(1)].shape[0]/df.shape[0]
     pass
 
 
@@ -125,7 +125,7 @@ def q5():
 
 
 def q6():
-    # Retorne aqui o resultado da questão 6.
+    return df.isna().sum().max()
     pass
 
 
@@ -137,7 +137,7 @@ def q6():
 
 
 def q7():
-    # Retorne aqui o resultado da questão 7.
+    return df['Product_Category_3'].value_counts().index[0]
     pass
 
 

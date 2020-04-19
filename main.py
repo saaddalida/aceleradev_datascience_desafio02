@@ -11,31 +11,50 @@
 
 # ## _Set up_ da análise
 
-# In[7]:
+# In[43]:
 
 
 import pandas as pd
 import numpy as np
 
 
-# In[8]:
+# In[44]:
 
 
 black_friday = pd.read_csv("black_friday.csv")
+df = black_friday
 
 
 # # Inicie sua análise a partir daqui
 
-# In[11]:
+# In[45]:
 
 
-black_friday
+df.head()
 
 
-# In[15]:
+# In[46]:
 
 
-black_friday.shape
+df.shape
+
+
+# In[47]:
+
+
+df.dtypes
+
+
+# In[48]:
+
+
+df.nunique()
+
+
+# In[52]:
+
+
+df['User_ID'][(df['Age'] == '26-35') & (df['Gender'] == 'F')].count()
 
 
 # ## Questão 1
@@ -46,7 +65,7 @@ black_friday.shape
 
 
 def q1():
-    return black_friday.shape
+    return df.shape
     pass
 
 
@@ -54,11 +73,11 @@ def q1():
 # 
 # Há quantas mulheres com idade entre 26 e 35 anos no dataset? Responda como um único escalar.
 
-# In[5]:
+# In[53]:
 
 
 def q2():
-    # Retorne aqui o resultado da questão 2.
+    return int(df['User_ID'][(df['Age'] == '26-35') & (df['Gender'] == 'F')].count())
     pass
 
 
@@ -70,7 +89,7 @@ def q2():
 
 
 def q3():
-    # Retorne aqui o resultado da questão 3.
+    return df['User_ID'].nunique()
     pass
 
 
@@ -82,7 +101,7 @@ def q3():
 
 
 def q4():
-    # Retorne aqui o resultado da questão 4.
+    return df.dtypes.nunique()
     pass
 
 
